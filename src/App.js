@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
+import Layout from "./layout/Layout";
+
 
 const App = () => {
+  const [orderP, setOrderP] = useState({});
+
+  const updateOrder = (e) => {
+    setOrderP(e);
+  }
+
   return (
     <>
-      <h1>Teknolojik Yemekler</h1>
-      <p>Burdaki kodu silip kendi headerınızı ekleyebilirsiniz</p>
+      <Layout order={orderP} updateOrder={updateOrder} />
     </>
   );
 };
